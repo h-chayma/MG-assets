@@ -110,10 +110,9 @@
     color: var(--text-color);
     padding: 0.3rem 1rem;
     border-radius: 50px;
-    margin-left: 0.7rem;
-    margin-bottom: 0.7rem;
     font-size: 0.9rem;
     transition: var(--hover-transition);
+    text-decoration: none;
   }
   
   .category-tag:hover {
