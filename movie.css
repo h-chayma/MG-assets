@@ -280,7 +280,7 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  #report-details, #report-type {
+  #report-details{
     background-color: #444; 
     color: #fff;
     border: 1px solid #555; 
@@ -299,6 +299,20 @@
     color: #fff;
   }
   
+  .submit-report {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--hover-transition);
+  }
+
+  .submit-report:hover {
+    background-color: #0035cc;
+  }
+
   .modal {
     display: none;
     position: fixed;
