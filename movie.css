@@ -34,13 +34,13 @@
   position: relative;
   margin-top: -150px;
   z-index: 2;
-  padding: 1rem;
+  //padding: 1rem;
 }
 
 .movie-header {
   display: flex;
   margin-bottom: 2rem;
-  gap: 2rem;
+  //gap: 2rem;
 }
 
 .movie-poster {
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
-  gap: 1.5rem;
+  //gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -89,19 +89,10 @@
   color: var(--accent-color);
 }
 
-.quality-badge {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.2rem 0.7rem;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
 .movie-categories {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  //gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -153,8 +144,7 @@
 }
 
 .watch-btn,
-.trailer-btn,
-.share-btn {
+.trailer-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -178,8 +168,7 @@
   color: white;
 }
 
-.trailer-btn,
-.share-btn {
+.trailer-btn {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-color);
   border: none;
@@ -192,8 +181,7 @@
 }
 
 .watch-btn i,
-.trailer-btn i,
-.share-btn i {
+.trailer-btn i {
   margin-left: 0.7rem;
 }
 
@@ -355,8 +343,7 @@
   }
 
   .watch-btn,
-  .trailer-btn,
-  .share-btn {
+  .trailer-btn {
     width: 100%;
   }
 
