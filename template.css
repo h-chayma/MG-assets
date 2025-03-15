@@ -1,0 +1,535 @@
+/* Base styles */
+.mg-container * {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.mg-container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+	direction: rtl;
+	font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* Header section */
+.mg-header {
+	position: relative;
+	width: 100%;
+	background-color: #0f0f0f;
+	border-radius: 0;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.mg-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+	opacity: 0.4;
+}
+
+.mg-backdrop::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to bottom,
+			rgba(15, 15, 15, 0.8) 0%,
+			rgba(15, 15, 15, 0.9) 100%);
+	z-index: 2;
+}
+
+.mg-content {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 150px 15px 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.mg-poster {
+	width: 180px;
+	height: auto;
+	margin: 0 auto 20px;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mg-poster img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+}
+
+.mg-info {
+	width: 100%;
+}
+
+.mg-title {
+	font-size: 1.8rem;
+	font-weight: 700;
+	margin-bottom: 15px;
+	color: #ffffff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.mg-meta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 15px;
+	gap: 8px;
+}
+
+.mg-meta-item {
+	display: flex;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+}
+
+.mg-meta-item i {
+	margin-left: 5px;
+	color: #e50914;
+}
+
+.mg-description {
+	font-size: 0.9rem;
+	margin-bottom: 20px;
+	line-height: 1.5;
+	opacity: 0.9;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.mg-actions {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.mg-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 4px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	text-decoration: none;
+	width: 100%;
+}
+
+.mg-btn.primary {
+	background: #e50914;
+	color: white !important;
+}
+
+.mg-btn.secondary {
+	background: rgba(255, 255, 255, 0.1);
+	color: white !important;
+}
+
+.mg-btn i {
+	margin-left: 8px;
+}
+
+/* Player section */
+.mg-player-container {
+	width: 100%;
+	margin-bottom: 20px;
+	background-color: #0f0f0f;
+	border-radius: 0;
+	overflow: hidden;
+}
+
+.mg-player {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	background-color: #000;
+	overflow: hidden;
+}
+
+.mg-player iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+/* Tabs section */
+.mg-tabs {
+	display: flex;
+	overflow-x: auto;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	background-color: #0f0f0f;
+	width: 100%;
+}
+
+.mg-tabs::-webkit-scrollbar {
+	display: none;
+}
+
+.mg-tab {
+	padding: 12px 15px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	cursor: pointer;
+	white-space: nowrap;
+	color: #b3b3b3;
+	position: relative;
+	flex-shrink: 0;
+}
+
+.mg-tab.active {
+	color: #e50914;
+}
+
+.mg-tab.active::after {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	right: 0;
+	left: 0;
+	height: 3px;
+	background-color: #e50914;
+}
+
+.mg-tab-content {
+	display: none;
+	padding: 0 15px;
+}
+
+.mg-tab-content.active {
+	display: block;
+}
+
+/* Servers section */
+.mg-servers {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.mg-server {
+	padding: 12px;
+	background-color: #181818;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	text-align: center;
+	font-size: 0.9rem;
+}
+
+.mg-server.active {
+	background-color: #e50914;
+	color: white;
+}
+
+.mg-alert {
+	background-color: rgba(0, 123, 255, 0.1);
+	border-right: 4px solid #007bff;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	font-size: 0.85rem;
+}
+
+.mg-alert i {
+	color: #007bff;
+	margin-left: 5px;
+}
+
+/* Downloads section */
+.mg-downloads {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.mg-download {
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	background-color: #181818;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	text-decoration: none;
+	color: white !important;
+}
+
+.mg-download i {
+	margin-left: 8px;
+	color: #e50914;
+}
+
+.mg-quality {
+	display: inline-block;
+	padding: 3px 8px;
+	background-color: #e50914;
+	color: white;
+	border-radius: 3px;
+	font-size: 0.75rem;
+	margin-right: 8px;
+}
+
+/* Info section */
+.mg-info-section {
+	background-color: #0f0f0f;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 0;
+}
+
+.mg-info-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	color: #e50914;
+}
+
+.mg-info-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.mg-info-item {
+	display: flex;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mg-info-item:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.mg-info-label {
+	flex: 0 0 80px;
+	color: #999;
+	font-size: 0.9rem;
+}
+
+.mg-info-value {
+	flex: 1;
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+/* Tags section */
+.mg-tags-section {
+	background-color: #0f0f0f;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 0;
+}
+
+.mg-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.mg-tag {
+	display: inline-block;
+	padding: 8px 12px;
+	background-color: #181818;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	text-decoration: none;
+	color: white !important;
+}
+
+.mg-tag:hover {
+	background-color: #e50914;
+}
+
+/* Episodes grid */
+.mg-episodes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.mg-episode-card {
+	background-color: #181818;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+
+.mg-episode-card:hover {
+	transform: translateY(-5px);
+}
+
+.mg-episode-thumb {
+	position: relative;
+	padding-top: 56.25%;
+	overflow: hidden;
+}
+
+.mg-episode-thumb img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.mg-episode-number {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(229, 9, 20, 0.9);
+	color: white;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.mg-episode-info {
+	padding: 10px;
+}
+
+.mg-episode-title {
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Season selector */
+.mg-season-selector {
+	display: flex;
+	overflow-x: auto;
+	margin-bottom: 20px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.mg-season-selector::-webkit-scrollbar {
+	display: none;
+}
+
+.mg-season {
+	padding: 8px 15px;
+	background-color: #181818;
+	border-radius: 4px;
+	margin-left: 10px;
+	white-space: nowrap;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.mg-season.active {
+	background-color: #e50914;
+	color: white;
+}
+
+/* Fix for Font Awesome icons */
+.mg-container .fas,
+.mg-container .far,
+.mg-container .fab {
+	display: inline-block !important;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+	.mg-header {
+		border-radius: 8px;
+		min-height: 400px;
+	}
+
+	.mg-content {
+		flex-direction: row;
+		text-align: right;
+		align-items: center;
+		padding: 110px 30px 30px;
+	}
+
+	.mg-poster {
+		width: 220px;
+		margin: 0 0 0 30px;
+		flex-shrink: 0;
+	}
+
+	.mg-title {
+		font-size: 2.5rem;
+	}
+
+	.mg-meta {
+		justify-content: flex-start;
+	}
+
+	.mg-description {
+		font-size: 1rem;
+		-webkit-line-clamp: initial;
+	}
+
+	.mg-actions {
+		flex-direction: row;
+		width: auto;
+	}
+
+	.mg-btn {
+		width: auto;
+		padding: 10px 20px;
+	}
+
+	.mg-player-container,
+	.mg-info-section,
+	.mg-tags-section {
+		border-radius: 8px;
+	}
+
+	.mg-servers,
+	.mg-downloads {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	}
+
+	.mg-episodes-grid {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+}
