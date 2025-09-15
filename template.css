@@ -25,7 +25,7 @@ body {
     line-height: 1.6;
 }
 
-.container {
+.mg-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -34,7 +34,7 @@ body {
 /* ===============================
    Shared Components
 =============================== */
-.hero {
+.mg-hero {
     position: relative;
     background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
     border-radius: 12px;
@@ -42,7 +42,7 @@ body {
     overflow: hidden;
 }
 
-.hero-backdrop {
+.mg-hero-backdrop {
     position: absolute;
     inset: 0;
     background-size: cover;
@@ -51,7 +51,7 @@ body {
     z-index: 1;
 }
 
-.hero-content {
+.mg-hero-content {
     position: relative;
     z-index: 2;
     display: flex;
