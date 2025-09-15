@@ -1,535 +1,541 @@
-/* Base styles */
-.mg-container * {
-	box-sizing: border-box;
-	max-width: 100%;
+/* ===============================
+   Global Styles
+=============================== */
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #111111;
+    --card-bg: #1a1a1a;
+    --accent-color: #e50914;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --font-primary: 'Cairo', 'Tajawal', sans-serif;
 }
 
-.mg-container {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	overflow: hidden;
-	direction: rtl;
-	font-family: 'Cairo', 'Tajawal', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header section */
-.mg-header {
-	position: relative;
-	width: 100%;
-	background-color: #0f0f0f;
-	border-radius: 0;
-	margin-bottom: 20px;
-	overflow: hidden;
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
-.mg-backdrop {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-size: cover;
-	background-position: center;
-	z-index: 1;
-	opacity: 0.4;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.mg-backdrop::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: linear-gradient(to bottom,
-			rgba(15, 15, 15, 0.8) 0%,
-			rgba(15, 15, 15, 0.9) 100%);
-	z-index: 2;
+/* ===============================
+   Shared Components
+=============================== */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
 }
 
-.mg-content {
-	position: relative;
-	z-index: 3;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 150px 15px 20px;
-	width: 100%;
-	text-align: center;
+.hero-backdrop {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 1;
 }
 
-.mg-poster {
-	width: 180px;
-	height: auto;
-	margin: 0 auto 20px;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
 }
 
-.mg-poster img {
-	width: 100%;
-	height: auto;
-	display: block;
-	object-fit: cover;
+.poster {
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.poster img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.mg-info {
-	width: 100%;
+.meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+.meta-item i {
+    color: var(--accent-color);
 }
 
-.mg-title {
-	font-size: 1.8rem;
-	font-weight: 700;
-	margin-bottom: 15px;
-	color: #ffffff;
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
 }
 
-.mg-meta {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 15px;
-	gap: 8px;
+.action-buttons {
+    display: flex;
+    gap: 1rem;
 }
 
-.mg-meta-item {
-	display: flex;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.3);
-	padding: 5px 10px;
-	border-radius: 4px;
-	font-size: 0.8rem;
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+.btn-primary:hover {
+    background: #c40812;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.mg-meta-item i {
-	margin-left: 5px;
-	color: #e50914;
+/* Player Section */
+.player-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.video-player {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+}
+.video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.mg-description {
-	font-size: 0.9rem;
-	margin-bottom: 20px;
-	line-height: 1.5;
-	opacity: 0.9;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+/* Tabs */
+.tabs {
+    display: flex;
+    background: var(--card-bg);
+    border-radius: 12px 12px 0 0;
+    overflow-x: auto;
+}
+.tab {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.tab.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+.tab-content {
+    display: none;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0 0 12px 12px;
+}
+.tab-content.active {
+    display: block;
 }
 
-.mg-actions {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	gap: 10px;
-	margin-bottom: 15px;
+/* Servers Grid */
+.servers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.server {
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.server:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+.server.active {
+    border-color: var(--accent-color);
+    background: rgba(229, 9, 20, 0.1);
 }
 
-.mg-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	border-radius: 4px;
-	font-weight: 600;
-	transition: all 0.3s ease;
-	cursor: pointer;
-	text-decoration: none;
-	width: 100%;
+/* Info Section */
+.info-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+.info-grid {
+    display: grid;
+    gap: 1rem;
+}
+.info-item {
+    display: flex;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.info-item:last-child {
+    border-bottom: none;
+}
+.info-label {
+    flex: 0 0 120px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+.info-value {
+    flex: 1;
+    color: var(--text-primary);
 }
 
-.mg-btn.primary {
-	background: #e50914;
-	color: white !important;
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.tag {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.tag:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
 }
 
-.mg-btn.secondary {
-	background: rgba(255, 255, 255, 0.1);
-	color: white !important;
+/* Alert */
+.alert {
+    background: rgba(0, 123, 255, 0.1);
+    border-right: 4px solid #007bff;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.alert i {
+    color: #007bff;
 }
 
-.mg-btn i {
-	margin-left: 8px;
+/* ===============================
+   Movie Template
+=============================== */
+.hero.movie {
+    min-height: 60vh;
+}
+.hero.movie .hero-content {
+    min-height: 60vh;
+}
+.movie-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 
-/* Player section */
-.mg-player-container {
-	width: 100%;
-	margin-bottom: 20px;
-	background-color: #0f0f0f;
-	border-radius: 0;
-	overflow: hidden;
+/* Downloads */
+.downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.download-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+.download-link:hover {
+    background: var(--accent-color);
+    transform: translateX(-5px);
+}
+.quality-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.mg-player {
-	position: relative;
-	width: 100%;
-	padding-top: 56.25%;
-	background-color: #000;
-	overflow: hidden;
+/* ===============================
+   Episode Template
+=============================== */
+.hero.episode {
+    min-height: 50vh;
+}
+.hero.episode .hero-content {
+    min-height: 50vh;
+}
+.episode-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 
-.mg-player iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: none;
+/* Episode Navigation */
+.episode-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+.nav-btn:hover {
+    background: var(--accent-color);
+}
+.nav-btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.episode-counter {
+    font-weight: 600;
+    color: var(--accent-color);
 }
 
-/* Tabs section */
-.mg-tabs {
-	display: flex;
-	overflow-x: auto;
-	margin: 0 0 15px 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	background-color: #0f0f0f;
-	width: 100%;
+/* Episodes Grid */
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.episode-card {
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid transparent;
+}
+.episode-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+}
+.episode-card.current {
+    border-color: var(--accent-color);
+    background: rgba(229, 9, 20, 0.1);
+}
+.episode-thumb {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+.episode-thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.episode-number {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.episode-card-info {
+    padding: 0.75rem;
+}
+.episode-card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
 }
 
-.mg-tabs::-webkit-scrollbar {
-	display: none;
+/* ===============================
+   Series Template
+=============================== */
+.hero.series {
+    min-height: 60vh;
+}
+.hero.series .hero-content {
+    min-height: 60vh;
+}
+.series-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 
-.mg-tab {
-	padding: 12px 15px;
-	font-weight: 600;
-	font-size: 0.9rem;
-	cursor: pointer;
-	white-space: nowrap;
-	color: #b3b3b3;
-	position: relative;
-	flex-shrink: 0;
+/* Season Selector */
+.season-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+}
+.season-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.season-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.season-btn:hover {
+    border-color: var(--accent-color);
 }
 
-.mg-tab.active {
-	color: #e50914;
+/* Episodes Section */
+.episodes-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.episodes-section .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.episode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.3);
+}
+.episode-info {
+    padding: 1rem;
+}
+.episode-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.episode-duration {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-.mg-tab.active::after {
-	content: '';
-	position: absolute;
-	bottom: -1px;
-	right: 0;
-	left: 0;
-	height: 3px;
-	background-color: #e50914;
-}
-
-.mg-tab-content {
-	display: none;
-	padding: 0 15px;
-}
-
-.mg-tab-content.active {
-	display: block;
-}
-
-/* Servers section */
-.mg-servers {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-bottom: 15px;
-	width: 100%;
-}
-
-.mg-server {
-	padding: 12px;
-	background-color: #181818;
-	border-radius: 4px;
-	cursor: pointer;
-	font-weight: 500;
-	text-align: center;
-	font-size: 0.9rem;
-}
-
-.mg-server.active {
-	background-color: #e50914;
-	color: white;
-}
-
-.mg-alert {
-	background-color: rgba(0, 123, 255, 0.1);
-	border-right: 4px solid #007bff;
-	padding: 10px;
-	border-radius: 4px;
-	margin-bottom: 15px;
-	font-size: 0.85rem;
-}
-
-.mg-alert i {
-	color: #007bff;
-	margin-left: 5px;
-}
-
-/* Downloads section */
-.mg-downloads {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-bottom: 15px;
-}
-
-.mg-download {
-	display: flex;
-	align-items: center;
-	padding: 12px;
-	background-color: #181818;
-	border-radius: 4px;
-	cursor: pointer;
-	font-weight: 500;
-	text-decoration: none;
-	color: white !important;
-}
-
-.mg-download i {
-	margin-left: 8px;
-	color: #e50914;
-}
-
-.mg-quality {
-	display: inline-block;
-	padding: 3px 8px;
-	background-color: #e50914;
-	color: white;
-	border-radius: 3px;
-	font-size: 0.75rem;
-	margin-right: 8px;
-}
-
-/* Info section */
-.mg-info-section {
-	background-color: #0f0f0f;
-	padding: 15px;
-	margin-bottom: 20px;
-	border-radius: 0;
-}
-
-.mg-info-title {
-	font-size: 1.2rem;
-	font-weight: 600;
-	margin-bottom: 15px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	color: #e50914;
-}
-
-.mg-info-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.mg-info-item {
-	display: flex;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.mg-info-item:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	border-bottom: none;
-}
-
-.mg-info-label {
-	flex: 0 0 80px;
-	color: #999;
-	font-size: 0.9rem;
-}
-
-.mg-info-value {
-	flex: 1;
-	font-weight: 500;
-	font-size: 0.9rem;
-}
-
-/* Tags section */
-.mg-tags-section {
-	background-color: #0f0f0f;
-	padding: 15px;
-	margin-bottom: 20px;
-	border-radius: 0;
-}
-
-.mg-tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-
-.mg-tag {
-	display: inline-block;
-	padding: 8px 12px;
-	background-color: #181818;
-	border-radius: 4px;
-	font-size: 0.85rem;
-	text-decoration: none;
-	color: white !important;
-}
-
-.mg-tag:hover {
-	background-color: #e50914;
-}
-
-/* Episodes grid */
-.mg-episodes-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-	gap: 15px;
-	margin-bottom: 20px;
-}
-
-.mg-episode-card {
-	background-color: #181818;
-	border-radius: 4px;
-	overflow: hidden;
-	transition: transform 0.3s ease;
-}
-
-.mg-episode-card:hover {
-	transform: translateY(-5px);
-}
-
-.mg-episode-thumb {
-	position: relative;
-	padding-top: 56.25%;
-	overflow: hidden;
-}
-
-.mg-episode-thumb img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.mg-episode-number {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	background-color: rgba(229, 9, 20, 0.9);
-	color: white;
-	padding: 3px 8px;
-	border-radius: 3px;
-	font-size: 0.8rem;
-	font-weight: 600;
-}
-
-.mg-episode-info {
-	padding: 10px;
-}
-
-.mg-episode-title {
-	font-size: 0.9rem;
-	font-weight: 600;
-	margin-bottom: 5px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-/* Season selector */
-.mg-season-selector {
-	display: flex;
-	overflow-x: auto;
-	margin-bottom: 20px;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-}
-
-.mg-season-selector::-webkit-scrollbar {
-	display: none;
-}
-
-.mg-season {
-	padding: 8px 15px;
-	background-color: #181818;
-	border-radius: 4px;
-	margin-left: 10px;
-	white-space: nowrap;
-	cursor: pointer;
-	font-size: 0.9rem;
-}
-
-.mg-season.active {
-	background-color: #e50914;
-	color: white;
-}
-
-/* Fix for Font Awesome icons */
-.mg-container .fas,
-.mg-container .far,
-.mg-container .fab {
-	display: inline-block !important;
-}
-
-/* Responsive styles */
-@media (min-width: 768px) {
-	.mg-header {
-		border-radius: 8px;
-		min-height: 400px;
-	}
-
-	.mg-content {
-		flex-direction: row;
-		text-align: right;
-		align-items: center;
-		padding: 110px 30px 30px;
-	}
-
-	.mg-poster {
-		width: 220px;
-		margin: 0 0 0 30px;
-		flex-shrink: 0;
-	}
-
-	.mg-title {
-		font-size: 2.5rem;
-	}
-
-	.mg-meta {
-		justify-content: flex-start;
-	}
-
-	.mg-description {
-		font-size: 1rem;
-		-webkit-line-clamp: initial;
-	}
-
-	.mg-actions {
-		flex-direction: row;
-		width: auto;
-	}
-
-	.mg-btn {
-		width: auto;
-		padding: 10px 20px;
-	}
-
-	.mg-player-container,
-	.mg-info-section,
-	.mg-tags-section {
-		border-radius: 8px;
-	}
-
-	.mg-servers,
-	.mg-downloads {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-	}
-
-	.mg-episodes-grid {
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	}
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    .poster {
+        width: 150px;
+    }
+    .movie-title,
+    .series-title {
+        font-size: 2rem;
+    }
+    .episode-title {
+        font-size: 1.8rem;
+    }
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .servers-grid {
+        grid-template-columns: 1fr;
+    }
+    .episode-nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    .episodes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .season-selector {
+        justify-content: center;
+    }
 }
