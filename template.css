@@ -33,6 +33,7 @@
 =============================== */
 .mg-hero {
     position: relative;
+    min-height: 60vh;
     background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -59,8 +60,9 @@
 
 .poster {
     flex-shrink: 0;
+    width: 200px;
     border-radius: 8px;
-    overflow: hidden;
+	overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 .poster img {
