@@ -135,6 +135,7 @@
 /* Player Section */
 .player-section {
     background: var(--card-bg);
+	border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 2rem;
@@ -213,6 +214,7 @@
 .info-section {
     background: var(--card-bg);
     border-radius: 12px;
+	border: 1px solid var(--border-color);
     padding: 2rem;
     margin-bottom: 2rem;
 }
