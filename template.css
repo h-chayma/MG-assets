@@ -18,17 +18,14 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-primary);
-    background-color: var(--primary-bg);
-    color: var(--text-primary);
-    line-height: 1.6;
-}
-
 .mg-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
 /* ===============================
