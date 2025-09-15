@@ -4,11 +4,11 @@
 :root {
     --primary-bg: #0a0a0a;
     --secondary-bg: #111111;
-    --card-bg: #1a1a1a;
+    --card-bg: #191919;
     --accent-color: #e50914;
     --text-primary: #ffffff;
     --text-secondary: #b3b3b3;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: #2c2c2c;
     --font-primary: 'Cairo', 'Tajawal', sans-serif;
 }
 
@@ -477,6 +477,7 @@
 /* Episodes Section */
 .episodes-section {
     background: var(--card-bg);
+	border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2rem;
