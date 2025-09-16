@@ -156,10 +156,14 @@
 }
 
 /* Tabs */
+.tabs-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
 .tabs {
     display: flex;
-    background: var(--card-bg);
-    border-radius: 12px 12px 0 0;
     overflow-x: auto;
 }
 .tab {
@@ -177,9 +181,7 @@
 }
 .tab-content {
     display: none;
-    background: var(--card-bg);
     padding: 2rem;
-    border-radius: 0 0 12px 12px;
 }
 .tab-content.active {
     display: block;
