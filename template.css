@@ -117,7 +117,7 @@
 }
 .btn-primary {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-primary);
 }
 .btn-primary:hover {
     background: #c40812;
@@ -126,7 +126,6 @@
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: var(--text-primary);
-    border: 1px solid var(--border-color);
 }
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -323,7 +322,7 @@
 }
 .quality-badge {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -421,7 +420,7 @@
     top: 0.5rem;
     right: 0.5rem;
     background: var(--accent-color);
-    color: white;
+    color: var(--text-primary);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
