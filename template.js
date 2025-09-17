@@ -1,17 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     /* ===============================
+       Helper Functions
+    =============================== */
+    const setActiveClass = (elements, activeEl, className = 'active') => {
+        elements.forEach(el => el.classList.remove(className));
+        activeEl.classList.add(className);
+    };
+
+    /* ===============================
        Tabs
     =============================== */
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', function () {
-            const tabId = this.dataset.tab;
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-            // Reset all
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-            // Activate current
-            this.classList.add('active');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabId = tab.dataset.tab;
+            setActiveClass(tabs, tab);
+            tabContents.forEach(c => c.classList.remove('active'));
             document.getElementById(tabId)?.classList.add('active');
         });
     });
@@ -19,44 +25,39 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===============================
        Servers
     =============================== */
-    document.querySelectorAll('.server').forEach(server => {
-        server.addEventListener('click', function () {
-            document.querySelectorAll('.server').forEach(s => s.classList.remove('active'));
-            this.classList.add('active');
-        });
+    const servers = document.querySelectorAll('.server');
+    servers.forEach(server => {
+        server.addEventListener('click', () => setActiveClass(servers, server));
     });
 
     /* ===============================
        Smooth Scroll
     =============================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', e => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            const target = document.querySelector(anchor.getAttribute('href'));
+            target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
     /* ===============================
        Season Selector (Series page)
     =============================== */
-    document.querySelectorAll('.season-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            document.querySelectorAll('.season-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+    const seasonBtns = document.querySelectorAll('.season-btn');
+    seasonBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            setActiveClass(seasonBtns, btn);
 
-            const seasonNumber = this.dataset.season;
+            const seasonNumber = btn.dataset.season;
             const titleEl = document.querySelector('.section-title');
             if (titleEl) {
-                let seasonName = '';
-                switch (seasonNumber) {
-                    case '1': seasonName = 'الأول'; break;
-                    case '2': seasonName = 'الثاني'; break;
-                    case '3': seasonName = 'الثالث'; break;
-                    default: seasonName = `#${seasonNumber}`;
-                }
+                const seasonNames = {
+                    1: 'الأول',
+                    2: 'الثاني',
+                    3: 'الثالث',
+                };
+                const seasonName = seasonNames[seasonNumber] || `#${seasonNumber}`;
                 titleEl.textContent = `حلقات الموسم ${seasonName}`;
             }
         });
@@ -66,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
        Episode Cards
     =============================== */
     document.querySelectorAll('.episode-card').forEach(card => {
-        card.addEventListener('click', function () {
-            const epNum = this.querySelector('.episode-number')?.textContent || '';
-            if (epNum) {
-                alert('You clicked on episode ' + epNum);
+        card.addEventListener('click', () => {
+            const link = card.getAttribute('href');
+            if (link) {
+                window.location.href = link;
             }
         });
     });
@@ -79,7 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     =============================== */
     document.querySelectorAll('.nav-btn:not(.disabled)').forEach(btn => {
         btn.addEventListener('click', () => {
-            alert('Navigating to next episode...');
+            const targetUrl = btn.getAttribute('href');
+            if (targetUrl) {
+                window.location.href = targetUrl;
+            }
         });
     });
 });

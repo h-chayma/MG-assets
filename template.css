@@ -222,13 +222,12 @@
 .mg-section-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: var(--accent-color);
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 .info-grid {
-    display: grid;
     gap: 1rem;
 }
 .info-item {
@@ -488,6 +487,7 @@
 .episodes-section .episodes-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 .episode-card:hover {
     transform: translateY(-5px);
