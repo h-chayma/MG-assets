@@ -25,18 +25,26 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===============================
        Servers
     =============================== */
-    const servers = document.querySelectorAll('.server');
-    const serverContents = document.querySelectorAll('.server-content');
+    document.addEventListener("DOMContentLoaded", () => {
+        const servers = document.querySelectorAll('.server');
+        const serverContents = document.querySelectorAll('.server-content');
 
-    servers.forEach((server, index) => {
-        server.addEventListener('click', () => {
-            // Set active class on server buttons
-            servers.forEach(s => s.classList.remove('active'));
-            server.classList.add('active');
+        // Show only the first server content by default
+        serverContents.forEach((sc, idx) => {
+            sc.style.display = idx === 0 ? 'block' : 'none';
+        });
 
-            // Show the correct iframe
-            serverContents.forEach(sc => sc.classList.remove('active'));
-            serverContents[index].classList.add('active');
+        servers.forEach((server, index) => {
+            server.addEventListener('click', () => {
+                // Highlight the clicked server
+                servers.forEach(s => s.classList.remove('active'));
+                server.classList.add('active');
+
+                // Show the correct iframe
+                serverContents.forEach((sc, i) => {
+                    sc.style.display = i === index ? 'block' : 'none';
+                });
+            });
         });
     });
 
