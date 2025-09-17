@@ -26,8 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
        Servers
     =============================== */
     const servers = document.querySelectorAll('.server');
-    servers.forEach(server => {
-        server.addEventListener('click', () => setActiveClass(servers, server));
+    const serverContents = document.querySelectorAll('.server-content');
+
+    servers.forEach((server, index) => {
+        server.addEventListener('click', () => {
+            // Set active class on server buttons
+            servers.forEach(s => s.classList.remove('active'));
+            server.classList.add('active');
+
+            // Show the correct iframe
+            serverContents.forEach(sc => sc.classList.remove('active'));
+            serverContents[index].classList.add('active');
+        });
     });
 
     /* ===============================
