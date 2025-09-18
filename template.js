@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("MG Template loaded");
-
     /* ===============================
        Helper Functions
     =============================== */
@@ -27,40 +25,26 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===============================
        Servers
     =============================== */
-    function initServers() {
-        const servers = document.querySelectorAll('.server');
-        const serverContents = document.querySelectorAll('.server-content');
+    const servers = document.querySelectorAll('.server');
+    const serverContents = document.querySelectorAll('.server-content');
 
-        console.log(`Found ${servers.length} servers and ${serverContents.length} server contents`);
+    // Show only the first server content by default
+    serverContents.forEach((sc, idx) => {
+        sc.style.display = idx === 0 ? 'block' : 'none';
+    });
 
-        if (servers.length === 0 || serverContents.length === 0) {
-            console.error("No servers or server contents found");
-            return;
-        }
+    servers.forEach((server, index) => {
+        server.addEventListener('click', () => {
+            // Highlight the clicked server
+            servers.forEach(s => s.classList.remove('active'));
+            server.classList.add('active');
 
-        // Show only the first server content by default
-        serverContents.forEach((sc, idx) => {
-            sc.style.display = idx === 0 ? 'block' : 'none';
-        });
-
-        servers.forEach((server, index) => {
-            server.addEventListener('click', () => {
-                console.log(`Server ${index} clicked`);
-
-                // Highlight the clicked server
-                servers.forEach(s => s.classList.remove('active'));
-                server.classList.add('active');
-
-                // Show the correct iframe
-                serverContents.forEach((sc, i) => {
-                    sc.style.display = i === index ? 'block' : 'none';
-                });
+            // Show the correct iframe
+            serverContents.forEach((sc, i) => {
+                sc.style.display = i === index ? 'block' : 'none';
             });
         });
-    }
-
-    // Initialize servers with a small delay to ensure DOM is fully ready
-    setTimeout(initServers, 100);
+    });
 
     /* ===============================
        Smooth Scroll
