@@ -25,25 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===============================
        Servers
     =============================== */
-    document.addEventListener("DOMContentLoaded", () => {
-        const servers = document.querySelectorAll('.server');
-        const serverContents = document.querySelectorAll('.server-content');
+    const servers = document.querySelectorAll('.server');
+    const serverContents = document.querySelectorAll('.server-content');
 
-        // Show only the first server content by default
-        serverContents.forEach((sc, idx) => {
-            sc.style.display = idx === 0 ? 'block' : 'none';
-        });
+    // Show only the first server content by default
+    serverContents.forEach((sc, idx) => {
+        sc.style.display = idx === 0 ? 'block' : 'none';
+    });
 
-        servers.forEach((server, index) => {
-            server.addEventListener('click', () => {
-                // Highlight the clicked server
-                servers.forEach(s => s.classList.remove('active'));
-                server.classList.add('active');
+    servers.forEach((server, index) => {
+        server.addEventListener('click', () => {
+            // Highlight the clicked server
+            servers.forEach(s => s.classList.remove('active'));
+            server.classList.add('active');
 
-                // Show the correct iframe
-                serverContents.forEach((sc, i) => {
-                    sc.style.display = i === index ? 'block' : 'none';
-                });
+            // Show the correct iframe
+            serverContents.forEach((sc, i) => {
+                sc.style.display = i === index ? 'block' : 'none';
             });
         });
     });
