@@ -98,7 +98,6 @@
   gap: 1rem;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -125,7 +124,6 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Player Section */
 .player-section {
   background: var(--card-bg);
   border-radius: 8px;
@@ -148,7 +146,6 @@
   border: none;
 }
 
-/* Tabs */
 .tabs-section {
   background: var(--card-bg);
   border-radius: 8px;
@@ -180,7 +177,6 @@
   display: block;
 }
 
-/* Servers Grid */
 .servers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -205,7 +201,6 @@
   background: rgba(229, 9, 20, 0.1);
 }
 
-/* Info Section */
 .info-section {
   background: var(--card-bg);
   border-radius: 8px;
@@ -242,7 +237,6 @@
   color: var(--text-primary);
 }
 
-/* Tags */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -262,7 +256,6 @@
   transform: translateY(-2px);
 }
 
-/* Alert */
 .alert {
   background: rgba(0, 123, 255, 0.1);
   border-right: 4px solid #007bff;
@@ -292,7 +285,6 @@
   color: var(--text-primary);
 }
 
-/* Downloads */
 .downloads {
   display: flex;
   flex-direction: column;
@@ -325,6 +317,9 @@
 /* ===============================
    Episode Template
 =============================== */
+/* ===============================
+   Episode Template
+=============================== */
 .hero.episode {
   min-height: 50vh;
 }
@@ -338,7 +333,6 @@
   color: var(--text-primary);
 }
 
-/* Episode Navigation */
 .episode-nav {
   display: flex;
   justify-content: space-between;
@@ -347,6 +341,20 @@
   padding: 1rem 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
+}
+
+.episode-card-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
 .nav-btn {
   display: flex;
@@ -371,12 +379,6 @@
   color: var(--accent-color);
 }
 
-/* Episodes Grid */
-.episodes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
 .episode-card {
   background: var(--secondary-bg);
   border-radius: 8px;
@@ -444,7 +446,6 @@
   color: var(--text-primary);
 }
 
-/* Season Selector */
 .season-selector {
   display: flex;
   gap: 1rem;
@@ -470,7 +471,6 @@
   border-color: var(--accent-color);
 }
 
-/* Episodes Section */
 .episodes-section {
   background: var(--card-bg);
   border-radius: 8px;
@@ -482,10 +482,6 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
-}
-.episode-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 32px rgba(229, 9, 20, 0.3);
 }
 .episode-info {
   padding: 1rem;
@@ -504,7 +500,6 @@
    Responsive Fixes for Small Devices
 =============================== */
 @media (max-width: 768px) {
-  /* Hero section improvements */
   .mg-hero-content {
     flex-direction: column;
     text-align: center;
@@ -543,7 +538,6 @@
     flex-wrap: wrap;
   }
 
-  /* Season selector improvements */
   .season-selector {
     justify-content: center;
   }
@@ -553,7 +547,6 @@
     font-size: 0.9rem;
   }
 
-  /* Episodes grid improvements */
   .episodes-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
@@ -567,7 +560,6 @@
     font-size: 0.9rem;
   }
 
-  /* Tags improvements */
   .tags {
     justify-content: center;
   }
