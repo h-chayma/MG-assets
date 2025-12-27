@@ -352,14 +352,6 @@
   gap: 0.5rem;
 }
 
-.episode-card-meta {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-top: 0.25rem;
-  opacity: 0.8;
-}
-
 .episodes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -391,54 +383,6 @@
   font-weight: 600;
   color: var(--accent-color);
   text-align: center;
-}
-
-.episode-card {
-  background: var(--secondary-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  border: 2px solid transparent;
-}
-
-.episode-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent-color);
-}
-
-.episode-card.current {
-  border-color: var(--accent-color);
-  background: rgba(229, 9, 20, 0.1);
-}
-
-.episode-thumb {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-}
-
-.episode-thumb img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.episode-number {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: var(--accent-color);
-  color: var(--text-primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 .episode-card-info {
@@ -550,48 +494,22 @@
 
 .season-episodes .episode-card {
   background: var(--secondary-bg);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
   border: 2px solid transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
 }
 
 .season-episodes .episode-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: var(--accent-color);
-  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.2);
 }
 
 .season-episodes .episode-card.current {
   border-color: var(--accent-color);
-  background: linear-gradient(
-    135deg,
-    rgba(229, 9, 20, 0.1) 0%,
-    rgba(229, 9, 20, 0.05) 100%
-  );
-}
-
-.season-episodes .episode-card.current:before {
-  content: "▶";
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background: var(--accent-color);
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  z-index: 2;
+  background: rgba(229, 9, 20, 0.1);
 }
 
 .season-episodes .episode-thumb {
@@ -599,7 +517,6 @@
   width: 100%;
   padding-top: 56.25%;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .season-episodes .episode-thumb img {
@@ -609,31 +526,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.season-episodes .episode-card:hover .episode-thumb img {
-  transform: scale(1.08);
 }
 
 .season-episodes .episode-number {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 0.5rem;
+  right: 0.5rem;
   background: var(--accent-color);
   color: var(--text-primary);
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  z-index: 2;
-  transition: all 0.3s ease;
-}
-
-.season-episodes .episode-card:hover .episode-number {
-  background: var(--text-primary);
-  color: var(--accent-color);
-  transform: scale(1.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .season-episodes .episode-info {
@@ -644,41 +548,18 @@
 }
 
 .season-episodes .episode-title {
-  font-size: 0.95rem;
+  text-align: center;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-  text-align: right;
   margin-bottom: 0.75rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 2.8em;
-}
-
-.season-episodes .episode-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .season-episodes .episode-duration {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-weight: 500;
-}
-
-.season-episodes .episode-duration:before {
-  content: "⏱️";
-  font-size: 0.8rem;
-  opacity: 0.7;
+  text-align: center;
+  margin-top: 0.25rem;
+  opacity: 0.8;
 }
 
 .no-episodes {
@@ -797,7 +678,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.9rem;
-    min-height: 2.6em;
   }
 }
 
@@ -866,11 +746,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.85rem;
-    min-height: 2.4em;
-  }
-
-  .season-episodes .episode-duration {
-    font-size: 0.75rem;
   }
 
   .season-episodes .episode-number {
@@ -926,8 +801,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.8rem;
-    -webkit-line-clamp: 2;
-    min-height: 2.2em;
   }
 
   .season-episodes .episode-number {
@@ -977,12 +850,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.78rem;
-    -webkit-line-clamp: 2;
-    min-height: 2em;
-  }
-
-  .season-episodes .episode-duration {
-    font-size: 0.7rem;
   }
 
   .episodes-grid {
@@ -1024,11 +891,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.75rem;
-    -webkit-line-clamp: 2;
-  }
-
-  .season-episodes .episode-duration {
-    font-size: 0.65rem;
   }
 }
 
