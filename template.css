@@ -351,12 +351,6 @@
   gap: 0.5rem;
 }
 
-.episodes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
 .nav-btn {
   display: flex;
   align-items: center;
@@ -476,14 +470,8 @@
 }
 
 .season-episodes {
-  margin-top: 1.5rem;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.season-episodes {
   display: none;
+  margin-top: 1.5rem;
 }
 
 .season-episodes.active {
@@ -644,19 +632,7 @@
 /* ===============================
   Responsive Design
 =============================== */
-@media (max-width: 1200px) {
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.25rem;
-  }
-}
-
 @media (max-width: 992px) {
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1.1rem;
-  }
-
   .season-episodes .episode-info {
     padding: 1rem 0.85rem 0.85rem;
   }
@@ -715,11 +691,6 @@
     font-size: 0.9rem;
   }
 
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-  }
-
   .season-episodes .episode-info {
     padding: 0.9rem 0.75rem 0.75rem;
   }
@@ -733,11 +704,6 @@
     right: 0.6rem;
     padding: 0.25rem 0.6rem;
     font-size: 0.8rem;
-  }
-
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
   }
 
   .tags {
@@ -766,11 +732,6 @@
 }
 
 @media (max-width: 576px) {
-  .episodes-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.9rem;
-  }
-
   .season-episodes .episode-thumb {
     padding-top: 66.66%;
   }
@@ -815,11 +776,6 @@
     font-size: 0.85rem;
   }
 
-  .episodes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
   .season-episodes .episode-thumb {
     padding-top: 75%;
   }
@@ -830,10 +786,6 @@
 
   .season-episodes .episode-title {
     font-size: 0.78rem;
-  }
-
-  .episodes-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .btn {
@@ -860,11 +812,6 @@
 }
 
 @media (max-width: 360px) {
-  .episodes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-  }
-  
   .season-episodes .episode-info {
     padding: 0.5rem;
   }
@@ -882,4 +829,46 @@
 .season-btn:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
+}
+
+@media (max-width: 1200px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .episodes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
 }
