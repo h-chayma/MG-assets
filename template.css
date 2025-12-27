@@ -565,6 +565,7 @@
   background: var(--secondary-bg);
   border-radius: 8px;
   border: 2px dashed var(--border-color);
+  margin-top: 1.2rem;
 }
 
 /* ===============================
@@ -709,10 +710,6 @@
   .season-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-  }
-
-  .episodes-section {
-    padding: 1.5rem;
   }
 
   .season-episodes {
