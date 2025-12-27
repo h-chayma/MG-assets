@@ -564,26 +564,12 @@
 
 .no-episodes {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem;
   color: var(--text-secondary);
   font-size: 1.1rem;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-bg) 0%,
-    rgba(25, 25, 25, 0.3) 100%
-  );
-  border-radius: 12px;
+  background: var(--secondary-bg);
+  border-radius: 8px;
   border: 2px dashed var(--border-color);
-  margin: 2rem 0;
-  grid-column: 1 / -1;
-}
-
-.no-episodes:before {
-  content: "📺";
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1rem;
-  opacity: 0.5;
 }
 
 /* ===============================
