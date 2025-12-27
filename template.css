@@ -25,9 +25,9 @@
   position: relative;
   min-height: 60vh;
   background: linear-gradient(
-   135deg,
-   var(--secondary-bg) 0%,
-   var(--primary-bg) 100%
+    135deg,
+    var(--secondary-bg) 0%,
+    var(--primary-bg) 100%
   );
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -220,7 +220,7 @@
 .info-section {
   background: var(--card-bg);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -231,7 +231,7 @@
   margin-bottom: 0.5rem;
   color: var(--accent-color);
   border-bottom: 2px solid var(--border-color);
-  padding-bottom: 0.5rem;
+  padding: 1.2rem 0;
 }
 
 .info-grid {
@@ -367,9 +367,10 @@
   justify-content: space-between;
   align-items: center;
   background: var(--card-bg);
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-radius: 12px;
   margin-bottom: 2rem;
+  gap: 0.5rem;
 }
 
 .episode-card-meta {
@@ -410,6 +411,7 @@
 .episode-counter {
   font-weight: 600;
   color: var(--accent-color);
+  text-align: center;
 }
 
 .episode-card {
@@ -585,12 +587,12 @@
 
 @keyframes slideInRight {
   from {
-   opacity: 0;
-   transform: translateX(20px);
+    opacity: 0;
+    transform: translateX(20px);
   }
   to {
-   opacity: 1;
-   transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -599,123 +601,123 @@
 =============================== */
 @media (max-width: 768px) {
   .mg-hero-content {
-   flex-direction: column;
-   text-align: center;
-   padding: 1.5rem 1rem;
-   gap: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
   }
 
   .poster {
-   width: 150px;
-   margin: 0 auto;
+    width: 150px;
+    margin: 0 auto;
   }
 
   .series-title {
-   font-size: 1.8rem;
-   line-height: 1.3;
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
 
   .meta-info {
-   justify-content: center;
-   gap: 0.5rem;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .meta-item {
-   padding: 0.4rem 0.8rem;
-   font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 
   .description {
-   font-size: 1rem;
-   line-height: 1.6;
-   text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
   }
 
   .action-buttons {
-   justify-content: center;
-   flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .season-selector {
-   justify-content: center;
+    justify-content: center;
   }
 
   .season-btn {
-   padding: 0.6rem 1.2rem;
-   font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 
   .episodes-grid {
-   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-   gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
   }
 
   .episode-info {
-   padding: 0.75rem;
+    padding: 0.75rem;
   }
 
   .episode-title {
-   font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .tags {
-   justify-content: center;
+    justify-content: center;
   }
 
   .tag {
-   font-size: 0.8rem;
-   padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .series-back-link {
-   width: 100%;
-   display: flex;
-   justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .back-btn {
-   font-size: 0.85rem;
-   padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .back-btn:hover {
-   transform: translateX(-3px);
+    transform: translateX(-3px);
   }
 }
 
 @media (max-width: 480px) {
   .series-title {
-   font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .meta-item {
-   flex: 1;
-   min-width: calc(50% - 0.5rem);
-   justify-content: center;
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    justify-content: center;
   }
 
   .meta-item:nth-child(3) {
-   min-width: 100%;
+    min-width: 100%;
   }
 
   .episodes-grid {
-   grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .btn {
-   width: 100%;
-   justify-content: center;
+    width: 100%;
+    justify-content: center;
   }
 
   .back-btn {
-   width: 100%;
-   justify-content: center;
+    width: 100%;
+    justify-content: center;
   }
 
   .back-btn span {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
   }
 }
