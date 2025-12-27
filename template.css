@@ -465,7 +465,7 @@
 .episodes-section {
   background: var(--card-bg);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
