@@ -469,10 +469,6 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.episodes-section .episodes-grid {
-  display: none;
-}
-
 .season-episodes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -483,11 +479,11 @@
   animation: fadeIn 0.3s ease-out;
 }
 
-.season-episodes[style*="display: none"] {
+.season-episodes {
   display: none;
 }
 
-.season-episodes[style*="display: block"] {
+.season-episodes.active {
   display: grid;
 }
 

@@ -58,19 +58,29 @@ document.addEventListener("DOMContentLoaded", () => {
        Season Selector (Series page)
     =============================== */
     const seasonBtns = document.querySelectorAll('.season-btn');
+    const seasonSections = document.querySelectorAll('.season-episodes');
+
     seasonBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             setActiveClass(seasonBtns, btn);
 
             const seasonNumber = btn.dataset.season;
-            const titleEl = document.querySelector('.section-title');
+
+            seasonSections.forEach(section => {
+                section.classList.toggle(
+                    'active',
+                    section.dataset.season === seasonNumber
+                );
+            });
+
+            const titleEl = document.querySelector('.mg-section-title');
             if (titleEl) {
                 const seasonNames = {
                     1: 'الأول',
                     2: 'الثاني',
                     3: 'الثالث',
                 };
-                const seasonName = seasonNames[seasonNumber] || `#${seasonNumber}`;
+                const seasonName = seasonNames[seasonNumber] || seasonNumber;
                 titleEl.textContent = `حلقات الموسم ${seasonName}`;
             }
         });
