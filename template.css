@@ -298,14 +298,6 @@
 /* ===============================
   Movie Template
 =============================== */
-.hero.movie {
-  min-height: 60vh;
-}
-
-.hero.movie .hero-content {
-  min-height: 60vh;
-}
-
 .movie-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -325,14 +317,6 @@
 /* ===============================
   Episode Template
 =============================== */
-.hero.episode {
-  min-height: 50vh;
-}
-
-.hero.episode .hero-content {
-  min-height: 50vh;
-}
-
 .mg-episode-title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -391,14 +375,6 @@
 /* ===============================
   Series Template
 =============================== */
-.hero.series {
-  min-height: 60vh;
-}
-
-.hero.series .hero-content {
-  min-height: 60vh;
-}
-
 .series-title {
   font-size: 2.5rem;
   font-weight: 700;
