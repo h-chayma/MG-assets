@@ -308,7 +308,7 @@
 .season-thumb {
   position: relative;
   width: 100%;
-  padding-top: 150%;
+  padding-top: 100%;
   overflow: hidden;
 }
 
@@ -360,7 +360,6 @@
   font-size: 0.85rem;
   color: var(--accent-color);
   font-weight: 600;
-  margin-top: 0.25rem;
 }
 
 /* Info Grid */
