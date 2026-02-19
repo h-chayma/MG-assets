@@ -164,6 +164,7 @@
 .tabs {
   display: flex;
   overflow-x: auto;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tab {
@@ -190,49 +191,179 @@
   display: block;
 }
 
-.servers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+/* ===============================
+  Series Template
+=============================== */
+.series-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
-.server {
-  padding: 1rem;
+/* Episodes Grid */
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.episode-card {
   background: var(--secondary-bg);
   border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
+  overflow: hidden;
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.server:hover {
-  background: var(--accent-color);
-  transform: translateY(-2px);
+.episode-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
 }
 
-.server.active {
+.episode-card.current {
   border-color: var(--accent-color);
   background: rgba(229, 9, 20, 0.1);
 }
 
-.info-section {
-  background: var(--card-bg);
+.episode-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.episode-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episode-number {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.episode-info {
+  padding: 1.25rem 1rem 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.episode-duration {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Seasons Grid */
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.season-card {
+  background: var(--secondary-bg);
   border-radius: 8px;
-  padding: 0 2rem 2rem 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.mg-section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+.season-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+}
+
+.season-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 150%;
+  overflow: hidden;
+}
+
+.season-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.season-number {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.season-info {
+  padding: 1.25rem 1rem 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.season-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.season-year {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.season-episodes {
+  text-align: center;
+  font-size: 0.85rem;
   color: var(--accent-color);
-  border-bottom: 2px solid var(--border-color);
-  padding: 1.2rem 0;
+  font-weight: 600;
+  margin-top: 0.25rem;
 }
 
+/* Info Grid */
 .info-grid {
   display: flex;
   flex-direction: column;
@@ -260,39 +391,16 @@
   color: var(--text-primary);
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.tag {
-  padding: 0.5rem 1rem;
+/* No Content Messages */
+.no-episodes,
+.no-seasons {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
   background: var(--secondary-bg);
-  border-radius: 20px;
-  text-decoration: none;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.tag:hover {
-  background: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-.alert {
-  background: rgba(0, 123, 255, 0.1);
-  border-right: 4px solid #007bff;
-  padding: 1rem;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.alert i {
-  color: #007bff;
+  border: 2px dashed var(--border-color);
 }
 
 /* ===============================
@@ -373,187 +481,27 @@
 }
 
 /* ===============================
-  Series Template
+  Tags
 =============================== */
-.series-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.season-selector {
+.tags {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  overflow-x: auto;
-  padding: 0.5rem 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) var(--secondary-bg);
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.season-btn {
-  padding: 0.75rem 1.5rem;
-  background: var(--card-bg);
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  color: var(--text-primary);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.season-btn.active {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
-}
-
-.season-btn:hover:not(.active) {
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-.episodes-section {
-  background: var(--card-bg);
-  border-radius: 8px;
-  padding: 0 2rem 2rem 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.episodes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.season-episodes {
-  display: none;
-}
-
-.season-episodes.active {
-  display: block;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.season-episodes .episode-card {
-  background: var(--secondary-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  border: 2px solid transparent;
-}
-
-.season-episodes .episode-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent-color);
-}
-
-.season-episodes .episode-card.current {
-  border-color: var(--accent-color);
-  background: rgba(229, 9, 20, 0.1);
-}
-
-.season-episodes .episode-thumb {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-}
-
-.season-episodes .episode-thumb img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.season-episodes .episode-number {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: var(--accent-color);
-  color: var(--text-primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.season-episodes .episode-info {
-  padding: 1.25rem 1rem 1rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.season-episodes .episode-title {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.season-episodes .episode-duration {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  text-align: center;
-  opacity: 0.8;
-}
-
-.no-episodes {
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  background: var(--secondary-bg);
-  border-radius: 8px;
-  border: 2px dashed var(--border-color);
-}
-
-/* ===============================
-  Series Back Link
-=============================== */
-.series-back-link {
-  margin-bottom: 1rem;
-  animation: slideInRight 0.5s ease-out;
-}
-
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.tag {
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  background: var(--secondary-bg);
+  border-radius: 20px;
   text-decoration: none;
   color: var(--text-primary);
   font-size: 0.9rem;
-  font-weight: 600;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
 }
 
-.back-btn:hover {
-  background: rgba(229, 9, 20, 0.2);
-  border-color: var(--accent-color);
-  transform: translateX(-5px);
-}
-
-.back-btn i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.back-btn:hover i {
-  transform: translateX(-3px);
+.tag:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 /* ===============================
@@ -581,22 +529,34 @@
   }
 }
 
-@keyframes spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
 /* ===============================
   Responsive Design
 =============================== */
-@media (max-width: 992px) {
-  .season-episodes .episode-info {
-    padding: 1rem 0.85rem 0.85rem;
+@media (max-width: 1200px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
   }
 
-  .season-episodes .episode-title {
-    font-size: 0.9rem;
+  .seasons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .seasons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .season-title {
+    font-size: 1rem;
   }
 }
 
@@ -639,74 +599,107 @@
     flex-wrap: wrap;
   }
 
-  .season-selector {
-    justify-content: flex-start;
-    padding-bottom: 0.5rem;
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
   }
 
-  .season-btn {
-    padding: 0.6rem 1.2rem;
+  .seasons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .episode-info {
+    padding: 1rem 0.85rem 0.85rem;
+  }
+
+  .episode-title {
     font-size: 0.9rem;
   }
 
-  .season-episodes .episode-info {
-    padding: 0.9rem 0.75rem 0.75rem;
+  .season-info {
+    padding: 1rem 0.85rem 0.85rem;
   }
 
-  .season-episodes .episode-title {
+  .season-title {
+    font-size: 0.95rem;
+  }
+
+  .season-year {
     font-size: 0.85rem;
   }
 
-  .season-episodes .episode-number {
-    top: 0.6rem;
-    right: 0.6rem;
-    padding: 0.25rem 0.6rem;
+  .season-episodes {
     font-size: 0.8rem;
   }
 
-  .tags {
-    justify-content: center;
-  }
-
-  .tag {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .series-back-link {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .back-btn {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .back-btn:hover {
-    transform: translateX(-3px);
+  .tab-content {
+    padding: 1.5rem;
   }
 }
 
 @media (max-width: 576px) {
-  .season-episodes .episode-thumb {
+  .episodes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+
+  .seasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+
+  .episode-thumb {
     padding-top: 66.66%;
   }
 
-  .season-episodes .episode-info {
+  .episode-info {
     padding: 0.75rem 0.6rem 0.6rem;
   }
 
-  .season-episodes .episode-title {
+  .episode-title {
     font-size: 0.8rem;
   }
 
-  .season-episodes .episode-number {
+  .episode-number {
     top: 0.5rem;
     right: 0.5rem;
     padding: 0.2rem 0.5rem;
     font-size: 0.75rem;
+  }
+
+  .season-thumb {
+    padding-top: 140%;
+  }
+
+  .season-info {
+    padding: 0.75rem 0.6rem 0.6rem;
+  }
+
+  .season-title {
+    font-size: 0.9rem;
+  }
+
+  .season-year {
+    font-size: 0.8rem;
+  }
+
+  .season-episodes {
+    font-size: 0.75rem;
+  }
+
+  .tab {
+    padding: 0.85rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info-label {
+    flex: none;
   }
 }
 
@@ -721,29 +714,57 @@
     justify-content: center;
   }
 
-  .meta-item:nth-child(3) {
-    min-width: 100%;
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
-  .season-selector {
-    gap: 0.5rem;
+  .seasons-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
-  .season-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .season-episodes .episode-thumb {
+  .episode-thumb {
     padding-top: 75%;
   }
 
-  .season-episodes .episode-info {
+  .episode-info {
     padding: 0.6rem;
   }
 
-  .season-episodes .episode-title {
+  .episode-title {
     font-size: 0.78rem;
+  }
+
+  .season-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .season-thumb {
+    width: 80px;
+    padding-top: 120px;
+    flex-shrink: 0;
+  }
+
+  .season-info {
+    padding: 0.75rem;
+    text-align: right;
+    align-items: flex-start;
+  }
+
+  .season-title {
+    text-align: right;
+    font-size: 1rem;
+  }
+
+  .season-year {
+    text-align: right;
+  }
+
+  .season-episodes {
+    text-align: right;
   }
 
   .btn {
@@ -751,76 +772,19 @@
     justify-content: center;
   }
 
-  .back-btn {
-    width: 100%;
-    justify-content: center;
+  .tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 
-  .back-btn span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 200px;
+  .tab-content {
+    padding: 1rem;
   }
 
-  .no-episodes {
+  .no-episodes,
+  .no-seasons {
     padding: 1.5rem;
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .season-episodes .episode-info {
-    padding: 0.5rem;
-  }
-
-  .season-episodes .episode-title {
-    font-size: 0.75rem;
-  }
-}
-
-.episode-card:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-.season-btn:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-@media (max-width: 1200px) {
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.25rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .episodes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .episodes-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .episodes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
   }
 }
 
@@ -829,4 +793,38 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
   }
+
+  .episode-info {
+    padding: 0.5rem;
+  }
+
+  .episode-title {
+    font-size: 0.75rem;
+  }
+
+  .season-thumb {
+    width: 70px;
+    padding-top: 105px;
+  }
+
+  .season-info {
+    padding: 0.5rem;
+  }
+
+  .season-title {
+    font-size: 0.9rem;
+  }
+
+  .tab {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Accessibility */
+.episode-card:focus-visible,
+.season-card:focus-visible,
+.tab:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
