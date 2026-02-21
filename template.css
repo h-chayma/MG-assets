@@ -191,7 +191,6 @@
   display: block;
 }
 
-/* Servers Grid */
 .servers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -219,7 +218,6 @@
   background: rgba(229, 9, 20, 0.1);
 }
 
-/* Alert */
 .alert {
   background: rgba(0, 123, 255, 0.1);
   border-right: 4px solid #007bff;
@@ -244,7 +242,6 @@
   color: var(--text-primary);
 }
 
-/* Episodes Grid */
 .episodes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -324,7 +321,6 @@
   opacity: 0.8;
 }
 
-/* Seasons Grid */
 .seasons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -405,7 +401,6 @@
   font-weight: 600;
 }
 
-/* Info Grid */
 .info-grid {
   display: flex;
   flex-direction: column;
@@ -433,7 +428,6 @@
   color: var(--text-primary);
 }
 
-/* No Content Messages */
 .no-episodes,
 .no-seasons {
   text-align: center;
@@ -544,6 +538,54 @@
 .tag:hover {
   background: var(--accent-color);
   transform: translateY(-2px);
+}
+
+/* ===============================
+  Coming Soon
+=============================== */
+.coming-soon-enhanced {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-bg) 0%,
+    rgba(229, 9, 20, 0.15) 100%
+  );
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  margin: 2rem;
+  text-align: center;
+  border: 2px dashed var(--accent-color);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.coming-soon-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(229, 9, 20, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-icon {
+  font-size: 40px;
+  color: var(--accent-color);
+}
+
+.coming-soon-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.coming-soon-message {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* ===============================
@@ -754,6 +796,28 @@
   .back-btn:hover {
     transform: translateX(-3px);
   }
+
+  .coming-soon-enhanced {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .coming-soon-title {
+    font-size: 1.5rem;
+  }
+
+  .coming-soon-message {
+    font-size: 1rem;
+  }
+
+  .coming-soon-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .coming-soon-icon {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -930,6 +994,18 @@
   .alert {
     padding: 0.85rem;
     font-size: 0.9rem;
+  }
+
+  .coming-soon-enhanced {
+    padding: 1.5rem 1rem;
+  }
+
+  .coming-soon-title {
+    font-size: 1.3rem;
+  }
+
+  .coming-soon-message {
+    font-size: 0.95rem;
   }
 }
 
