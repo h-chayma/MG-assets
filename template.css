@@ -521,10 +521,24 @@
 =============================== */
 .tags-section {
   background: var(--card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
+  border-radius: 8px;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tags-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tags-header i {
+  color: var(--accent-color);
+  font-size: 1.3rem;
 }
 
 .tags-title {
@@ -532,27 +546,6 @@
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.tag {
-  padding: 0.5rem 1rem;
-  background: var(--secondary-bg);
-  border-radius: 20px;
-  text-decoration: none;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.tag:hover {
-  background: var(--accent-color);
-  transform: translateY(-2px);
 }
 
 /* ===============================
@@ -1021,6 +1014,15 @@
 
   .tags-title {
     font-size: 1.2rem;
+  }
+
+  .tags-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .tags-header i {
+    font-size: 1.1rem;
   }
 
   .tag {
