@@ -548,6 +548,28 @@
   margin: 0;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--secondary-bg);
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
 /* ===============================
   Coming Soon
 =============================== */
@@ -816,6 +838,19 @@
 
   .coming-soon-icon {
     font-size: 30px;
+  }
+
+  .tags-section {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .tags-title {
+    font-size: 1.3rem;
+  }
+
+  .tags-header i {
+    font-size: 1.2rem;
   }
 }
 
